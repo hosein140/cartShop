@@ -1,0 +1,50 @@
+.cartP {
+  display: flex;
+  justify-content: space-around;
+}
+.costantCF {
+  display: flex;
+  width: 50px;
+  height: 30px;
+  align-items: center;
+  text-align: center;
+}
+
+.divForm1 {
+  gap: 69px;
+}
+.divForm2 {
+  gap: 69px;
+}
+.divForm3 {
+  gap: 10px;
+}
+.divForm4 {
+  gap: 70px;
+}
+
+p {
+  margin: 0px;
+  font-size: 12px;
+  text-align: center;
+  text-wrap: nowrap;
+  justify-content: center;
+}
+input {
+  padding: 0px;
+  margin: 0px;
+}
+button {
+  margin-left: 80px;
+  margin-top: 30px;
+}
+.p2 {
+  padding: 0px;
+
+  left: 20px;
+}
+.back {
+  margin: 0px;
+  right: 700px;
+  padding: 2px;
+}

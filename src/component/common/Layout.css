@@ -1,0 +1,14 @@
+.header {
+  display: block;
+  background-color: #452;
+  position: fixed;
+  width: auto;
+  height: 38px;
+}
+.footer {
+  display: inline-block;
+  background-color: #452;
+  position: fixed;
+  width: auto;
+  height: 38px;
+}

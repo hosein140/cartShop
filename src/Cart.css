@@ -1,0 +1,112 @@
+:root {
+  --fontFamily: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+* {
+  font-family: "Courier New", Courier, monospace;
+}
+.cartBoxDisplay {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0px;
+  height: 165px;
+  width: 550px;
+
+  border: 1px solid;
+  margin: 3px;
+  margin-left: 35%;
+}
+.cartDisplay {
+  height: 170px;
+  width: 500px;
+  padding: 0px;
+}
+.h5 {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+.p1 {
+  margin-top: 5px;
+}
+.p2 {
+  margin-top: 10px;
+  margin-left: 100px;
+  padding: 0px;
+  font-size: 12px;
+  text-wrap: nowrap;
+}
+
+.box {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.price {
+  color: red;
+  text-decoration: line-through;
+  font-family: var(--fontFamily);
+  margin-bottom: 0px;
+}
+.offBox {
+  color: green;
+  text-decoration: underline;
+  font-family: var(--fontFamily);
+  margin-bottom: 0px;
+}
+
+.card {
+  display: flex;
+  left: 10px;
+  width: 90px;
+  height: 20px;
+}
+.addCart {
+  display: flex;
+  padding: 10px 5px;
+  background-color: silver;
+  border-width: 1px;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+.countBtn {
+  color: white;
+  display: flex;
+  margin-top: 24px;
+  background-color: green;
+
+  align-items: center;
+  justify-content: space-between;
+}
+.countBtn:hover {
+  opacity: 75%;
+  color: black;
+}
+.plus {
+  width: 16px;
+  color: white;
+}
+.minus {
+  width: 16px;
+  color: white;
+}
+.alignTrashCardCount {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.trash,
+.edit {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+
+  justify-content: center;
+  padding: 0%;
+}
