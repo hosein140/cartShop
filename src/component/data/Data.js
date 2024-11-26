@@ -4,7 +4,7 @@ export const initialData = [
     title: "book",
     price: 2000,
     discount: 20,
-    description: "winning year book",
+    description: "winniner of book",
     entity: 5,
   },
   {
