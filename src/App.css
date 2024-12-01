@@ -1,13 +1,43 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
-  position: relative;
-  height: 100vh;
-  margin-left: 30px;
-  display: block;
+/* * {
+  background-color: hsl(127, 16%, 68%);
+} */
+
+@keyframes rotate {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.4);
+  }
+  60% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
-.cBtn {
+/* .App {
+  top: 40px;
+  width: 560px;
+  font-family: sans-serif;
+  text-align: center;
+
+  height: max-content;
+  margin-left: 30px;
+  transform: translateX(300px);
+  display: block;
+} */
+.div1 {
+  position: absolute;
+  top: 20px;
+  left: 300px;
+}
+/* .cBtn {
   display: flex;
   margin-top: 62px;
   margin-left: 39%;
@@ -19,16 +49,19 @@
   border-radius: 4px;
   justify-content: space-between;
   align-items: center;
-}
+} */
 p {
   display: flex;
   margin-left: 5px;
   width: 40%;
 }
-.div1 {
-  display: flex;
-  width: 60%;
-}
+
+/* .div1:hover {
+  animation: rotate 2000ms;
+  transform-origin: center;
+  transition-delay: 5ms;
+  animation-iteration-count: 1;
+} */
 .cartForm {
   margin-top: 90px;
 }

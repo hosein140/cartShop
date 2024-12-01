@@ -1,24 +1,29 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Cart from "../src/Cart";
 import "./App.css";
 import Layout from "./component/common/Layout";
 import { initialData } from "./component/data/Data";
 import CartForm from "./form/CartForm";
-import Modal from "./form/Modal";
+import { Modal } from "@mui/material";
+
+import { Button, Typography, Grid, Box } from "@mui/material";
+import BasicModal from "./form/BasicModal";
 
 function App() {
   const [productList, setProductList] = useState(initialData);
   const [addProduct, setAddProduct] = useState(false);
   const [editingProduct, setEditingProduct] = useState("");
-  // const [openModal, setOpenModal] = useState(false);
+  const modalOpen = false;
+  const modalClose = false;
 
   const saveDataHandler = (addCart) => {
     const id = Math.floor(Math.random() * 10000);
     const finalData = { ...addCart, id };
-    console.log(finalData);
+    console.log(addCart);
     setProductList((prev) => {
       return [...prev, finalData];
     });
+
     setAddProduct(false);
   };
   // const backToApp = () => {};
@@ -37,40 +42,37 @@ function App() {
     <Layout>
       {!addProduct && !editingProduct && (
         <>
-          <button
-            className="cBtn"
-            onClick={() => {
-              setAddProduct(true);
-            }}>
-            <div className="div1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="2 1 46 25  "
-                strokeWidth={4}
-                stroke="currentColor"
-                className="size-0.1">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 4.5v15m7.5-7.5h-15"
-                />
-              </svg>
-            </div>
-            <p className="p">Product</p>
-          </button>
-          <p className="p"></p>
-          <div className="App">
+          <Grid container rowGap="27px">
+            <Grid item xs={12} sx={{ textAlign: "center" }}>
+              {" "}
+              <Button
+                variant="contained"
+                onClick={() => {
+                  setAddProduct(true);
+                }}>
+                <Typography component="h3">+ Product</Typography>
+              </Button>
+            </Grid>
             {productList.map((product) => (
-              <Cart
-                key={product.id}
-                {...product}
-                deleteProduct={deleteProduct}
-                editProduct={editProduct}
-              />
+              <Grid key={product.id} item xs={12} sm={6} md={3}>
+                <Box>
+                  {" "}
+                  <Cart
+                    {...product}
+                    deleteProduct={deleteProduct}
+                    editProduct={editProduct}
+                  />
+                </Box>
+              </Grid>
             ))}
-          </div>
+          </Grid>
         </>
+      )}
+
+      {addProduct && (
+        <Modal open={modalOpen} onClose={modalClose}>
+          <CartForm saveData={saveDataHandler} addProduct={setAddProduct} />
+        </Modal>
       )}
       {editingProduct && (
         <Modal>
@@ -81,19 +83,8 @@ function App() {
           />
         </Modal>
       )}
-      {addProduct && (
-        <Modal>
-          <CartForm saveData={saveDataHandler} addProduct={setAddProduct} />
-        </Modal>
-      )}
     </Layout>
   );
 }
 
 export default App;
-
-// {addProduct && (
-//   <Modal>
-//     <CartForm saveData={saveDataHandler} setAddProduct={setAddProduct} />
-//   </Modal>
-// )}

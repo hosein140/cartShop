@@ -2,13 +2,13 @@
   display: flex;
   justify-content: space-around;
 }
-.costantCF {
+/* .costantCF {
   display: flex;
   width: 50px;
   height: 30px;
   align-items: center;
   text-align: center;
-}
+} */
 
 .divForm1 {
   gap: 69px;

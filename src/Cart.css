@@ -4,19 +4,21 @@
 * {
   font-family: "Courier New", Courier, monospace;
 }
+.show {
+  top: 300px;
+  transform: translateX(340px);
+}
 .cartBoxDisplay {
   display: flex;
   justify-content: flex-start;
   margin-top: 0px;
-  height: 165px;
+  height: 200px;
   width: 550px;
-
+  z-index: -1;
   border: 1px solid;
-  margin: 3px;
-  margin-left: 35%;
 }
 .cartDisplay {
-  height: 170px;
+  height: 160px;
   width: 500px;
   padding: 0px;
 }
@@ -44,18 +46,11 @@
 }
 .price {
   color: red;
-  text-decoration: line-through;
-  font-family: var(--fontFamily);
-  margin-bottom: 0px;
 }
 .offBox {
   color: green;
-  text-decoration: underline;
-  font-family: var(--fontFamily);
-  margin-bottom: 0px;
 }
-
-.card {
+/* .card {
   display: flex;
   left: 10px;
   width: 90px;
@@ -86,21 +81,23 @@
 .countBtn:hover {
   opacity: 75%;
   color: black;
-}
-.plus {
+} */
+/* .plus {
   width: 16px;
   color: white;
 }
 .minus {
   width: 16px;
   color: white;
-}
-.alignTrashCardCount {
+} */
+/* .alignTrashCardCount {
   display: flex;
-  gap: 10px;
+  transform: translateY(55px);
+  gap: 100px;
   justify-content: center;
-}
-.trash,
+  align-items: center;
+} */
+/* .trash,
 .edit {
   display: flex;
   width: 30px;
@@ -109,4 +106,4 @@
 
   justify-content: center;
   padding: 0%;
-}
+} */

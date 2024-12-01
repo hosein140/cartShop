@@ -1,9 +1,31 @@
 .footer {
+  display: flex;
   position: fixed;
   bottom: 0px;
   left: 0;
   width: 100%;
+
+  background-color: rgb(78, 136, 102);
+  color: black;
+  height: 50px;
+
   text-align: center;
-  background-color: indigo;
-  color: white;
+  align-items: center;
+  justify-content: center;
+  transition: transform 1000ms ease 100ms;
+}
+.h5 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 12px;
+  background-color: rgb(78, 136, 102);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.footer:hover {
+  transform: translateY(50px);
+  filter: blur(5px);
+  background-color: yellowgreen;
 }

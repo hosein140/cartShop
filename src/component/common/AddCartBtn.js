@@ -1,9 +1,14 @@
 import React from "react";
+import Button from "@mui/material/Button";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
+import ButtonGroup from "@mui/material/ButtonGroup";
 import { useState } from "react";
 import Card from "../card/Card";
+import SvgIcon from "@mui/material/SvgIcon";
 import { productList } from "../data/Data";
 // count داخل {} قرار بگیرد؟؟چرا
-function AddCartBtn({ count = 0, entity }) {
+function AddCartBtn({ count = 1, entity }) {
   const [counter, setCounter] = useState(count);
 
   return (
@@ -12,45 +17,34 @@ function AddCartBtn({ count = 0, entity }) {
       {count !== 0 && (
         <div>
           {" "}
-          <Card className="countBtn addCart">
-            <div>
-              <svg
+          <Card /*className="countBtn addCart"*/>
+            <ButtonGroup
+              size="small"
+              color="black"
+              sx={{ padding: "0", marginRight: "0" }}>
+              <Button
+                size="small"
+                aria-label="reduce"
                 onClick={() => {
-                  entity > counter && setCounter(counter + 1);
-                }}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="plus">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 4.5v15m7.5-7.5h-15"
-                />
-              </svg>
-            </div>
+                  // setCount(Math.max(count - 1, 0));
+                  counter > 0 && setCounter(counter - 1);
+                }}>
+                <RemoveIcon fontSize="small" />
+              </Button>
+              <Button size="small" disabled>
+                {counter}
+              </Button>
+              <Button
+                size="small"
+                aria-label="increase"
+                onClick={() => {
+                  // setCount(count + 1);
 
-            <p>{counter}</p>
-            <div
-              onClick={() => {
-                counter > 0 && setCounter(counter - 1);
-              }}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="minus">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M5 12h14"
-                />
-              </svg>
-            </div>
+                  entity > counter && setCounter(counter + 1);
+                }}>
+                <AddIcon fontSize="small" />
+              </Button>
+            </ButtonGroup>
           </Card>
         </div>
       )}

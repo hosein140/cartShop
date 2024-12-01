@@ -5,7 +5,7 @@ const Footer = () => {
     <div>
       <div className="footer">
         <div>
-          <h5>Footer</h5>
+          <h5 className="h5">Footer</h5>
         </div>
       </div>
     </div>
